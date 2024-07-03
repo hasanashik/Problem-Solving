@@ -1,6 +1,6 @@
 from typing import List
 
-# Broute fource solution
+# Broute force solution
 
 
 # def maxProfit(prices: List[int]) -> int:
