@@ -24,3 +24,6 @@ def isPalindrome(self, s: str) -> bool:
     s = re.sub('[^0-9a-zA-Z]+', '', s.lower())
     
     return check_palindrome(0, len(s) - 1)
+    
+# Time Complexity: O(n)
+# Space Complexity: O(n)
