@@ -44,3 +44,5 @@ class Solution:
 if __name__ == "__main__":
     result = Solution()
     print(result.isValid(input("Enter String: ")))
+    #  Time Complexity: O(string_length) and 
+    #  Space Complexity: O(string_length)
