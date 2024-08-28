@@ -1,4 +1,4 @@
-# Problem statement: https://leetcode.com/problems/valid-parentheses/description/
+# Problem statement: https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/description/
 class Solution:
     class Stack:
         def __init__(self):
@@ -23,27 +23,27 @@ class Solution:
         def size(self):
             return len(self.stack)
 
-    def isValid(self, s: str) -> bool:
+    def removeDuplicates(self, s: str) -> str:
+        result = ''
+        if len(s) == 1:
+            return s
+
         our_stack = self.Stack()
-        parentheses = {')': '(', '}': '{', ']': '['}
-        for char in s:
-            if char in ['(', '{', '[']:
-                # push in stack
+        our_stack.push(s[0])
+        for char in s[1:]:
+            if char != our_stack.peek():
                 our_stack.push(char)
-            if char == ')' or char == '}' or char == ']':
-                # check stack first item opposite paranthesis or not
-                if our_stack.peek() != parentheses[char]:
-                    return False
-                else:
-                    our_stack.pop()
-        if our_stack.is_empty():
-            return True
-        else:
-            return False
+            else:
+                our_stack.pop()
+
+        for _ in range(our_stack.size()):
+            result = result + our_stack.pop()
+
+        return result[::-1]
 
 
 if __name__ == "__main__":
     result = Solution()
-    print(result.isValid(input("Enter String: ")))
+    print(result.removeDuplicates(input("Enter String: ")))
     #  Time Complexity: O(string_length) and
     #  Space Complexity: O(string_length)
