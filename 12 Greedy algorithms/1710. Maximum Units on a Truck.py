@@ -20,8 +20,5 @@ class Solution:
 
 
 
-# boxTypes = [[1,3],[2,2],[3,1]] truckSize = 4
-# boxTypes[i] [1,3] numberOfBoxes_i = 1 numberOfUnitsPerBox_i = 3
-# sort items based on units (numberOfUnitsPerBox_i )
-# pick boxes from sorted items upto truckSize 
-# calculate total 
+
+# time complexity: O(Length of boxTypes) and space complexity: O(Length of boxTypes)
